@@ -65,11 +65,16 @@ header {
     max-width: 100%;
     /* La propiedad max-width: 100% establece que el ancho máximo de un elemento no puede ser mayor que el 100% del contenedor padre. Esto significa que el elemento puede tener cualquier ancho desde 0% hasta 100%, pero no exceder este último valor. */
     height: 200px;
-    margin: 20px 0;
+    margin: 10px 0;
 }
 
 .logo {
     text-align: center;
+}
+
+.logo a {
+    display: block;
+    margin-bottom: 20px;
 }
 
 .nav {

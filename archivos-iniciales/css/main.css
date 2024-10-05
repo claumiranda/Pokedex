@@ -67,6 +67,11 @@ header {
     text-align: center;
 }
 
+.logo a {
+    display: block;
+    margin-bottom: 20px;
+}
+
 .nav {
     display: flex;
     flex-direction: column;
