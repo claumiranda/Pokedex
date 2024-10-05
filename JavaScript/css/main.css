@@ -1,0 +1,360 @@
+/* importación de estilo de letra de Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+/* variables de colores */
+:root {
+    --clr-black: #1c1c1c;
+    --clr-gray: #ececec;
+    --clr-white: #f7f7f7;
+
+    --type-normal: #A8A878;
+    --type-fire: #F08030;
+    --type-water: #6890F0;
+    --type-grass: #78C850;
+    --type-electric: #F8D030;
+    --type-ice: #98D8D8;
+    --type-fighting: #C03028;
+    --type-poison: #A040A0;
+    --type-ground: #E0C068;
+    --type-flying: #A890F0;
+    --type-psychic: #F85888;
+    --type-bug: #A8B820;
+    --type-rock: #B8A038;
+    --type-ghost: #705898;
+    --type-dark: #705848;
+    --type-dragon: #7038F8;
+    --type-steel: #B8B8D0;
+    --type-fairy: #F0B6BC;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--clr-black);
+    font-family: 'Rubik', sans-serif;
+}
+
+/* Reset para UL y BUTTON = luego se modifica el estilo como se nesecite */
+ul {
+    list-style-type: none;
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #57a4f7;
+}
+
+header {
+    padding-block: 1rem;  /* para separar arriba y abajo, agraga padding top y bottom */
+    box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, .25);  /* marca un sombra que divide el header y el body */
+}
+
+.logo img {
+    width: 350px;
+    max-width: 100%;
+    height: 600px;
+    margin: 20px 0;
+    
+}
+
+.logo {
+    text-align: center;
+    
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;  /* para que todo se acomode a la izquierda */
+    padding-inline: 2rem;  /* para separar a los costados, agrega padding rigth y left */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/** Lista de botones */
+.nav-list {
+    display: flex;  /* los botones se acomodan 1 al lado del otro */
+    align-items: center;
+    flex-wrap: wrap;  /* si no entran en el box se van a acomodar abajo */
+    gap: 1.1rem;
+}
+
+/** Cada uno de los botones */
+.btn-header {
+    background-color: #f7bc57;
+    padding: .9rem;
+    border-radius: 100vmax; /* permite tener un número extremadamente grande y sepamos que nunca va a quedar muy chico el border radius */
+    cursor: pointer;  /* para se aparezca la manito al pasar el cursor */
+    text-transform: uppercase; /* para que esté todo en mayúscula */
+    font-weight: 600;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, .25);  /* sombra */
+    transition: .2s;
+}
+
+.btn-header:hover {
+    transform: scale(1.1);  /* hace que se agrande */
+    box-shadow: 0 0 2rem rgba(0, 0, 0, .5); /* al hacer hover también se agranda el shadow  */
+}
+
+main {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/** engloba a cada uno de los pokemon */
+.pokemon-todos {
+    display: grid;
+    grid-template-columns: 1fr;  /* lo vemos en 1 columna */
+    gap: 1rem;
+}
+
+@media screen and (min-width: 320px) {
+    .logo img {
+        max-width: 100%;
+        height: auto; 
+    } 
+    .PokeBall img {
+        max-width: 100px;
+    }
+    .nav-lista {
+        gap: .3rem;
+    }
+    .btn-header {
+        padding: .3rem;
+    }
+}
+
+@media screen and (min-width: 470px) {
+    .pokemon-todos {
+        grid-template-columns: 1fr 1fr; /* lo vemos en 2 columnas */
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .pokemon-todos {
+        grid-template-columns: 1fr 1fr 1fr; /* lo vwmos en 3 columnas */
+    }
+    .nav-lista {
+        gap: 1.1rem;
+    }
+    .btn-header {
+        padding: .8rem;
+    }
+}
+
+/** tarjeta */
+.pokemon {
+    border-radius: 1rem;
+    background-color: var(--clr-white);
+    box-shadow: 0 0 3rem -1rem rgba(0, 0, 0, .5);
+    padding-block: 1rem;  /* arriba y abajo */
+    text-transform: uppercase;
+    position: relative;
+    isolation: isolate;
+    /* se utiliza para crear un nuevo contexto de apilamiento para un elemento, el nivel más lejano donde se va a ubicar es el elemeto padre */
+    overflow: hidden;  /* oculta el contenido sobresaliente */
+}
+
+/** id de fondo */
+.pokemon-id-back {
+    position: absolute;  /* debemos tener un position relative en el padre */
+    top: 1rem;
+    /* *centrado horizontal */
+    left: 50%;  /* ubica el comienzo del elemento al 50% de su padre */
+    transform: translateX(-50%); /* lo mueve al 50% de su propio ancho hacia la izquierda, queda centrado en el eje X de su padre */
+    /* *centrardo vertical */
+    /* top: 50%;
+    transform: translateY(-50%); */
+    font-size: 6rem;
+    font-weight: 800;
+    color: var(--clr-gray);
+    z-index: -1;
+    /* si colocamos solo z-index el elemento se ubica detrás de su padre que es la terjeta, para que se acomode sobre la tarjeta, detrás de la imagen, es necesario colocar => isolation: isolate en el padre ( .pokemon) */
+}
+
+.pokemon-imagen {
+    padding-inline: 1rem;
+    display: flex;
+    justify-content: center;  /* centra horizontalmente */
+}
+
+.pokemon-info {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding-inline: 1rem;  /* a los costados */
+    align-items: center;
+    text-align: center;
+}
+
+/* *contiene al ID y al nombre del POkemon */
+.nombre-contenedor {
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;  /* el gap se mantiene mientras son columnas => se encuentran uno al lado del otro.. cuando se vuelven 2 filas diferentes, ese gap no está */
+    flex-wrap: wrap;  /* cuando se achica que no se tapen, que se acomoden uno debajo del otro */
+    justify-content: center; /* para que cuando se achique permanezcan centrados */
+}
+
+.pokemon-id {
+    background-color: var(--clr-gray);
+    padding: .25rem .5rem;
+    border-radius: 100vmax;
+    font-size: .75rem;
+    font-weight: 500;
+}
+
+.pokemon-nombre {
+    font-size: 1.4rem;
+}
+
+/* *clasifiación */
+.pokemon-tipos {
+    display: flex;
+    gap: .5rem;
+    font-size: .72rem;
+    font-weight: 500;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tipo {
+    padding: .25rem .5rem;
+    border-radius: 100vmax;
+}
+
+/* *peso y altura */
+.pokemon-stats {
+    display: flex;
+    gap: 1rem;
+    font-size: .85rem;
+}
+
+.stat {
+    background-color: var(--clr-gray);
+    padding: .25rem .5rem;
+    border-radius: 100vmax;
+}
+
+.pokemon-imagen img {
+    width: 100%;  /* para que no sobresalga */
+    max-width: 6rem; /* para que no cresca tanto, que no sea tan grande  */
+}
+
+/** colores de botones según la clasificación */
+.normal {
+    background-color: var(--type-normal);
+    color: var(--clr-black);
+}
+
+.fire {
+    background-color: var(--type-fire);
+    color: var(--clr-black);
+}
+
+.water {
+    background-color: var(--type-water);
+    color: var(--clr-white);
+}
+
+.grass {
+    background-color: var(--type-grass);
+    color: var(--clr-black);
+}
+
+.electric {
+    background-color: var(--type-electric);
+    color: var(--clr-black);
+}
+
+.ice {
+    background-color: var(--type-ice);
+    color: var(--clr-black);
+}
+
+.fighting {
+    background-color: var(--type-fighting);
+    color: var(--clr-white);
+}
+
+.poison {
+    background-color: var(--type-poison);
+    color: var(--clr-white);
+}
+
+.ground {
+    background-color: var(--type-ground);
+    color: var(--clr-black);
+}
+
+.flying {
+    background-color: var(--type-flying);
+    color: var(--clr-black);
+}
+
+.psychic {
+    background-color: var(--type-psychic);
+    color: var(--clr-black);
+}
+
+.bug {
+    background-color: var(--type-bug);
+    color: var(--clr-black);
+}
+
+.rock {
+    background-color: var(--type-rock);
+    color: var(--clr-black);
+}
+
+.ghost {
+    background-color: var(--type-ghost);
+    color: var(--clr-white);
+}
+
+.dark {
+    background-color: var(--type-dark);
+    color: var(--clr-white);
+}
+
+.dragon {
+    background-color: var(--type-dragon);
+    color: var(--clr-white);
+}
+
+.steel {
+    background-color: var(--type-steel);
+    color: var(--clr-black);
+}
+
+.fairy {
+    background-color: var(--type-fairy);
+    color: var(--clr-black);
+}
+
+footer {
+    padding-block: 1rem;
+    box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, 1);   
+}
+
+.PokeBall {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.PokeBall img {
+    width: 100%; 
+    max-width: 6rem;
+}
+.PokeBall p {
+    margin: 10px 0;
+}

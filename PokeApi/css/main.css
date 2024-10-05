@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    /* La pseudo-clase :root en CSS selecciona el elemento raíz del documento, que en HTML es el elemento <html>. Este selector se utiliza comúnmente para definir variables CSS y aplicar estilos globales a todo el documento. */
+    --clr-black: #1c1c1c;
+    --clr-gray: #ececec;
+    --clr-white: #f7f7f7;
+
+    --type-normal: #A8A878;
+    --type-fire: #F08030;
+    --type-water: #6890F0;
+    --type-grass: #78C850;
+    --type-electric: #F8D030;
+    --type-ice: #98D8D8;
+    --type-fighting: #C03028;
+    --type-poison: #A040A0;
+    --type-ground: #E0C068;
+    --type-flying: #A890F0;
+    --type-psychic: #F85888;
+    --type-bug: #A8B820;
+    --type-rock: #B8A038;
+    --type-ghost: #705898;
+    --type-dark: #705848;
+    --type-dragon: #7038F8;
+    --type-steel: #B8B8D0;
+    --type-fairy: #F0B6BC;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    /* La propiedad CSS box-sizing establece cómo se calcula el ancho y la altura total de un elemento. Permite incluir el padding y el borde dentro de las dimensiones totales del elemento, lo que facilita el diseño y la alineación de los elementos en la página. */
+
+    /* border-box; establece que el modelo de caja de un elemento debe incluir el borde y el relleno dentro de los valores especificados para el ancho y la altura. Esto facilita el diseño de la maquetación, ya que evita que los elementos se extiendan más allá de sus dimensiones definidas. */
+    color: var(--clr-black);
+    font-family: 'Rubik', sans-serif;
+}
+
+ul {
+    list-style-type: none; /* La propiedad CSS list-style-type: none; se utiliza para eliminar los marcadores de lista de un elemento de lista. Esto significa que los elementos de la lista no mostrarán ningún punto, disco, ni otro tipo de marcador. */
+}
+
+/* reset al estilo de los botones para estilizarlos luego a gusto */
+button {
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+}
+
+body {
+    min-height: 100vh;
+    /* La propiedad min-height: 100vh; establece la altura mínima de un elemento al 100% del alto de la ventana del navegador. Esto significa que el elemento no será más pequeño que la altura total de la ventana, pero puede crecer más si el contenido lo requiere. */
+    background-color: red;
+}
+
+header {
+    padding-block: 1rem;
+    /* La propiedad CSS padding-block se utiliza para definir el espacio de relleno en la parte superior e inferior de un elemento, específicamente en la dirección del bloque. En tu caso, padding-block: 1rem; significa que se añadirá un relleno de 1rem tanto en el borde superior como en el borde inferior del elemento. Esto crea espacio adicional entre el contenido y el borde del elemento, lo que mejora la presentación visual y la legibilidad. */
+    box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, 1);
+    /* El código CSS box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, 1); aplica una sombra a un elemento. El primer par de ceros 0 0 indica que la sombra no se desplaza en los ejes horizontal y vertical. El 2rem es el tamaño del desenfoque, lo que hace que la sombra se vea más difusa. El -1rem es la extensión de la sombra, que hace que se expanda hacia el interior. Finalmente, rgba(0, 0, 0, 1) define el color de la sombra en negro opaco. */
+}
+
+.logo img {
+    max-width: 100%;
+    /* La propiedad max-width: 100% establece que el ancho máximo de un elemento no puede ser mayor que el 100% del contenedor padre. Esto significa que el elemento puede tener cualquier ancho desde 0% hasta 100%, pero no exceder este último valor. */
+    height: 200px;
+    margin: 20px 0;
+}
+
+.logo {
+    text-align: center;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+    /* La propiedad align-items: flex-start; en CSS se utiliza dentro de un contenedor flex para alinear los elementos hijos al inicio del eje transversal (cross axis), que generalmente es la parte superior del contenedor. Esto significa que todos los elementos dentro del contenedor flex se alinearán en la parte superior, en la dirección del eje transversal. */
+    padding-inline: 2rem;
+    /* La propiedad padding-inline en CSS define el espacio (padding) en los bordes laterales (inicio y fin) de un elemento, usando un valor lógico. En tu ejemplo, padding-inline: 2rem; aplicará un padding de 2 rem tanto al inicio como al final del elemento.
+
+    Es importante recordar que esta propiedad combina las propiedades padding-inline-start y padding-inline-end en una sola declaración. */
+    max-width: 1000px;
+    /* La propiedad CSS max-width: 1000px; establece que el ancho máximo de un elemento no puede exceder los 1000 píxeles. Si el contenido del elemento es menor que este valor, el max-width no tendrá efecto aplicado. Para establecerlo, puedes incluirlo en tu archivo CSS o en una etiqueta <style> dentro de tu HTML. */
+    margin: 0 auto;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    /* La propiedad flex-wrap en CSS se utiliza para definir si los elementos flexibles (hijos) de un contenedor flex deben permanecer en una sola línea o si pueden envolver en múltiples líneas. Al establecer flex-wrap: wrap;, los elementos pueden fluir y distribuirse en varias líneas si el espacio disponible no es suficiente. */
+    gap: .5rem;
+}
+
+.btn-header {
+    background-color: var(--clr-gray);
+    padding: .5rem;
+    margin-bottom: 10px;
+    border-radius: 100vmax;
+    cursor: pointer;
+    text-transform: uppercase;
+    /* La propiedad text-transform: uppercase; de CSS se utiliza para transformar el texto de un elemento HTML en letras mayúsculas. Esto afecta únicamente la visualización del texto, manteniendo el contenido original sin cambios. */
+    font-weight: 600;
+    /* El valor font-weight: 600; corresponde a "Semi Bold" (semi negrita) según la escala de pesos de fuentes. En esta escala, los valores van desde 100 (Thin) hasta 800 (Extra Bold). */
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .5);
+    transition: .2s;
+    /* La propiedad transition: .2s; en CSS es una forma abreviada que indica que la transición de un elemento durará 0.2 segundos. Sin embargo, esta declaración no especifica qué propiedad se animará ni la función de temporización, por lo que se aplicará a todas las propiedades que cambien durante ese tiempo. Para un uso más completo, se recomienda especificar también transition-property y transition-timing-function. */
+}
+
+.btn-header:hover {
+    /* El pseudo-clase :hover en CSS se utiliza para aplicar estilos a un elemento cuando el cursor del mouse pasa sobre él. Esto permite crear efectos visuales interactivos. Se puede aplicar a casi todos los elementos HTML, como enlaces, botones, y más. */
+    transform: scale(1.1);
+    /* La propiedad transform: scale(1.1); en CSS aumenta el tamaño de un elemento un 10% en ambas direcciones, es decir, tanto en ancho como en alto. El valor 1 es el tamaño original, mientras que cualquier valor superior a 1 incrementa el tamaño del elemento. */
+    box-shadow: 0 0 2rem rgba(0, 0, 0, .5);
+}
+
+main {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.pokemon-todos {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* La propiedad grid-template-columns: 1fr; define una sola columna en un contenedor de cuadrícula (grid), donde esa columna ocupará toda la fracción del espacio disponible. Esto significa que la columna se ajustará para llenar el espacio que le queda en su contenedor. */
+    gap: 1rem;
+}
+
+/* .mi-elemento {  
+    min-width: 300px; El ancho mínimo será 300 píxeles 
+    max-width: 600px; El ancho máximo será 600 píxeles */  
+ 
+@media screen and (min-width: 320px) {
+    /* La propiedad min-width establece el ancho mínimo que un elemento puede tener. Si el contenido o el tamaño del contenedor es menor que este valor, el ancho del elemento se ajustará al valor especificado de min-width.
+    Uso: Se usa generalmente para evitar que un elemento se vuelva demasiado estrecho, lo que podría resultar en un diseño poco legible o estéticamente no deseado. */
+    .logo img {
+          max-width: 100%;
+          height: auto;  /*Si el max-widthla propiedad está configurada al 100%, la imagen se reducirá si tiene que hacerlo, pero nunca escalar para ser más grande que su tamaño origina */
+    }        
+    .pokemon-todos {
+            grid-template-columns: 1fr;
+    }
+}
+
+
+@media screen and (min-width: 470px) {
+    .pokemon-todos {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .pokemon-todos {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* ! @media (max-width: ) */
+/* La propiedad max-width establece el ancho máximo que un elemento puede tener. Si el contenido o el tamaño del contenedor supera este valor, el ancho del elemento se ajustará a max-width y se añadirá un desbordamiento.
+Uso: Se utiliza para evitar que un elemento se vuelva demasiado ancho en pantallas grandes, lo que puede afectar la legibilidad y el diseño general. */
+
+/* Ambas propiedades se pueden usar en conjunto para establecer un rango de anchos aceptables para un elemento, lo que resulta útil en diseños responsivos. Aquí hay un ejemplo de uso conjunto: */
+
+/* !.mi-elemento {  
+   ! min-width: 300px; El ancho mínimo será 300 píxeles  
+   ! max-width: 600px; El ancho máximo será 600 píxeles */  
+
+.pokemon {
+    border-radius: 1rem;
+    background-color: var(--clr-white);
+    box-shadow: 0 0 3rem -1rem rgba(0, 0, 0, .5);
+    padding-block: 1rem;
+    text-transform: uppercase;
+    position: relative;
+    /* La propiedad position: relative; se utiliza en CSS para situar un elemento en relación a su posición original en el flujo del documento. Esto significa que el elemento puede ser desplazado utilizando las propiedades top, bottom, left y right, sin que su espacio reservado en el documento cambie. Es importante recordar que estos desplazamientos son relativos a la posición inicial del elemento. */
+    isolation: isolate;
+    /* La propiedad CSS isolation: isolate; se utiliza para crear un nuevo contexto de apilamiento para el elemento en cuestión. Esto es útil para prevenir que elementos se mezclen con su fondo o entre sí, mejorando la manera en que se representan visualmente en la interfaz de usuario. */
+    overflow: hidden;
+    /* La propiedad CSS overflow: hidden; se utiliza para ocultar cualquier contenido que desborde el área de una caja HTML. Esto significa que cualquier parte del contenido que exceda los límites del elemento no será visible. Esta propiedad es útil para la presentación visual y el diseño cuando se desea evitar el desbordamiento visual. */
+}
+
+.pokemon-id-back {
+    position: absolute;
+    /* La propiedad CSS position: absolute; coloca un elemento en una posición relativa a su contenedor posicionado más cercano (un contenedor con position: relative, absolute, fixed, o sticky). Si no hay contenedor posicionado, el elemento se posiciona en relación al elemento <html> o body. */
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    /* La propiedad CSS transform: translateX(-50%); reposiciona un elemento horizontalmente hacia la izquierda por un 50% del ancho de dicho elemento. Esto significa que el elemento se mueve a la izquierda hasta el centro del contenedor principal si se usa en conjunción con left: 50%;.
+
+ */
+    font-size: 6rem;
+    font-weight: 800;
+    z-index: -1;
+    /* El valor z-index: -1; se utiliza en CSS para colocar un elemento detrás de otros elementos en la misma capa de contexto de apilamiento. Un elemento con un z-index negativo será apilado detrás de los elementos con z-index de 0 o superiores. Es importante asegurarse de que el elemento tenga una propiedad de posición establecida (como relative, absolute o fixed) para que el z-index tenga efecto. */
+    color: var(--clr-gray);
+}
+
+.pokemon-imagen {
+    padding-inline: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.pokemon-imagen img {
+    width: 100%;
+    max-width: 6rem;
+}
+
+.pokemon-info {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding-inline: 1rem;
+    align-items: center;
+    /* La propiedad align-items: center; se utiliza en CSS dentro de un contenedor flexbox o de cuadrícula (grid) para alinear verticalmente los elementos hijos en el centro del contenedor. Esto afecta a todos los elementos dentro del contenedor al establecer su alineación por defecto en el eje transversal. */
+    text-align: center;
+}
+
+.nombre-contenedor {
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pokemon-id {
+    background-color: var(--clr-gray);
+    padding: .25rem .5rem;
+    border-radius: 100vmax;
+    font-size: .75rem;
+    font-weight: 500;
+}
+
+.pokemon-nombre {
+    font-size: 1.4rem;
+}
+
+.pokemon-tipos {
+    display: flex;
+    gap: .5rem;
+    font-size: .75rem;
+    font-weight: 500;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tipo {
+    padding: .25rem .5rem;
+    border-radius: 100vmax;
+}
+
+.pokemon-stats {
+    display: flex;
+    gap: 1rem;
+    font-size: .85rem;
+}
+
+.stat {
+    background-color: var(--clr-gray);
+    padding: .25rem .5rem;
+    border-radius: 100vmax;
+}
+
+.normal {
+    background-color: var(--type-normal);
+    color: var(--clr-black);
+}
+
+.fire {
+    background-color: var(--type-fire);
+    color: var(--clr-black);
+}
+
+.water {
+    background-color: var(--type-water);
+    color: var(--clr-white);
+}
+
+.grass {
+    background-color: var(--type-grass);
+    color: var(--clr-black);
+}
+
+.electric {
+    background-color: var(--type-electric);
+    color: var(--clr-black);
+}
+
+.ice {
+    background-color: var(--type-ice);
+    color: var(--clr-black);
+}
+
+.fighting {
+    background-color: var(--type-fighting);
+    color: var(--clr-white);
+}
+
+.poison {
+    background-color: var(--type-poison);
+    color: var(--clr-white);
+}
+
+.ground {
+    background-color: var(--type-ground);
+    color: var(--clr-black);
+}
+
+.flying {
+    background-color: var(--type-flying);
+    color: var(--clr-black);
+}
+
+.psychic {
+    background-color: var(--type-psychic);
+    color: var(--clr-black);
+}
+
+.bug {
+    background-color: var(--type-bug);
+    color: var(--clr-black);
+}
+
+.rock {
+    background-color: var(--type-rock);
+    color: var(--clr-black);
+}
+
+.ghost {
+    background-color: var(--type-ghost);
+    color: var(--clr-white);
+}
+
+.dark {
+    background-color: var(--type-dark);
+    color: var(--clr-white);
+}
+
+.dragon {
+    background-color: var(--type-dragon);
+    color: var(--clr-white);
+}
+
+.steel {
+    background-color: var(--type-steel);
+    color: var(--clr-black);
+}
+
+.fairy {
+    background-color: var(--type-fairy);
+    color: var(--clr-black);
+}
+
+footer {
+    padding-block: 1rem;
+    box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, 1);   
+}
+
+.PokeBall {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.PokeBall img {
+    width: 100%; 
+    max-width: 6rem;
+}
+.PokeBall p {
+    margin: 10px 0;
+}
+

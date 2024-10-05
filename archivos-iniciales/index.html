@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex - Paso a Paso (CSS)</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div class="logo" >
+        <img src="./img/playPokemon-removebg-preview.png" alt="Logo playPokemon">
+    </div> 
+    <header>
+        <nav class="nav">
+               
+            <ul class="nav-list">
+                <li class="nav-item"><button class="btn btn-header" id="ver-todos">Ver todos</button></li> 
+                <li class="nav-item"><button class="btn btn-header normal" id="normal">Normal</button></li>
+                <li class="nav-item"><button class="btn btn-header fire" id="fire">Fire</button></li>
+                <li class="nav-item"><button class="btn btn-header water" id="water">Water</button></li>
+                <li class="nav-item"><button class="btn btn-header grass" id="grass">Grass</button></li>
+                <li class="nav-item"><button class="btn btn-header electric" id="electric">Electric</button></li>
+                <li class="nav-item"><button class="btn btn-header ice" id="ice">Ice</button></li>
+                <li class="nav-item"><button class="btn btn-header fighting" id="fighting">Fighting</button></li>
+                <li class="nav-item"><button class="btn btn-header poison" id="poison">Poison</button></li>
+                <li class="nav-item"><button class="btn btn-header ground" id="ground">Ground</button></li>
+                <li class="nav-item"><button class="btn btn-header flying" id="flying">Flying</button></li>
+                <li class="nav-item"><button class="btn btn-header psychic" id="psychic">Psychic</button></li>
+                <li class="nav-item"><button class="btn btn-header bug" id="bug">Bug</button></li>
+                <li class="nav-item"><button class="btn btn-header rock" id="rock">Rock</button></li>
+                <li class="nav-item"><button class="btn btn-header ghost" id="ghost">Ghost</button></li>
+                <li class="nav-item"><button class="btn btn-header dark" id="dark">Dark</button></li>
+                <li class="nav-item"><button class="btn btn-header dragon" id="dragon">Dragon</button></li>
+                <li class="nav-item"><button class="btn btn-header steel" id="steel">Steel</button></li>
+                <li class="nav-item"><button class="btn btn-header fairy" id="fairy">Fairy</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+       <div id="todos">
+        <!-- id=listaPokemos => lugar que se va a rellenar con los Pokemon que metamos por JavaScript -->
+         <div class="pokemon-todos" id="listaPokemon">
+            <!-- class=pokemon => cada uno de estos pokemon van a tener este div contenedor-->
+            <div class="pokemon">
+                <!-- p => número que tiene de fondo -->
+                 <p class="pokemon-id-back">#025</p>
+                 <!-- imagen -->
+                 <div class="pokemon-imagen">
+                    <!-- PokeApi (pokemon/pikachu)=> sprite => other => official-artwork => copiar link-->
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" alt="Pikachu">
+                 </div>
+<div class="pokemon-info">
+<div class="nombre-contenedor">
+  <!-- p.pokemon-id -->
+  <p class="pokemon-id">#025</p>
+  <!-- h2.pokemon-nombre -->
+  <h2 class="pokemon-nombre">Pikachu</h2>
+</div>
+   <!-- div.pokemon-tipo => para autocompletar -->
+   <div class="pokemon-tipos">
+      <p class="electric tipo">ELECTRIC</p>
+      <p class="fighting tipo">FIGHTING</p>
+   </div> 
+   <div class="pokemon-stats">
+    <p class="altura stat">0,4m</p>
+    <p class="peso stat">6,0kg</p>
+
+   </div>
+</div>
+</div>
+      
+<!-- pokemon 2 -->
+<div class="pokemon">
+
+     <p class="pokemon-id-back">#004</p>
+
+     <div class="pokemon-imagen">
+
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png">
+     </div>
+<div class="pokemon-info">
+<div class="nombre-contenedor">
+
+<p class="pokemon-id">#004</p>
+
+<h2 class="pokemon-nombre">Charmander</h2>
+</div>
+
+<div class="pokemon-tipos">
+<p class="electric tipo">FIRE</p>
+<p class="fighting tipo">FIGHTING</p>
+</div> 
+<div class="pokemon-stats">
+<p class="altura stat">0,6m</p>
+<p class="peso stat">8,5kg</p>
+
+</div>
+</div>
+</div>
+
+<!-- pokemon 3 -->
+<div class="pokemon">
+
+    <p class="pokemon-id-back">#007</p>
+
+    <div class="pokemon-imagen">
+
+       <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png">
+    </div>
+<div class="pokemon-info">
+<div class="nombre-contenedor">
+
+<p class="pokemon-id">#007</p>
+
+<h2 class="pokemon-nombre">SQUIRTLE</h2>
+</div>
+
+<div class="pokemon-tipos">
+<p class="electric tipo">WATER</p>
+
+</div> 
+<div class="pokemon-stats">
+<p class="altura stat">0,5m</p>
+<p class="peso stat">9kg</p>
+
+</div>
+</div>
+</div>
+
+<!-- pokemon 4 -->
+<div class="pokemon">
+
+    <p class="pokemon-id-back">#039</p>
+
+    <div class="pokemon-imagen">
+
+       <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/39.png">
+    </div>
+<div class="pokemon-info">
+<div class="nombre-contenedor">
+
+<p class="pokemon-id">#039</p>
+
+<h2 class="pokemon-nombre">JIGGLYPUFF</h2>
+</div>
+
+<div class="pokemon-tipos">
+<p class="electric tipo">NORMAL</p>
+<p class="fighting tipo">FAIRY</p>
+</div> 
+<div class="pokemon-stats">
+<p class="altura stat">0,5m</p>
+<p class="peso stat">5,5kg</p>
+
+</div>
+</div>
+</div>
+
+<!-- pokemon 5 -->
+<div class="pokemon">
+
+    <p class="pokemon-id-back">#054</p>
+
+    <div class="pokemon-imagen">
+
+       <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/54.png">
+    </div>
+<div class="pokemon-info">
+<div class="nombre-contenedor">
+
+<p class="pokemon-id">#054</p>
+
+<h2 class="pokemon-nombre">PSYDUCK</h2>
+</div>
+
+<div class="pokemon-tipos">
+<p class="electric tipo">WATER</p>
+
+</div> 
+<div class="pokemon-stats">
+<p class="altura stat">0,8m</p>
+<p class="peso stat">9,6kg</p>
+
+</div>
+</div>
+</div>
+
+<!-- pokemon 6 -->
+<div class="pokemon">
+
+    <p class="pokemon-id-back">#052</p>
+
+    <div class="pokemon-imagen">
+
+       <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/52.svg">
+    </div>
+<div class="pokemon-info">
+<div class="nombre-contenedor">
+
+<p class="pokemon-id">#052</p>
+
+<h2 class="pokemon-nombre">MEOWTH</h2>
+</div>
+
+<div class="pokemon-tipos">
+<p class="electric tipo">NORMAL</p>
+
+</div> 
+<div class="pokemon-stats">
+<p class="altura stat">0,4m</p>
+<p class="peso stat">4,2kg</p>
+
+</div>
+</div>
+</div>
+
+</div>
+       </div> 
+
+    </main>
+
+    <footer>
+        <div class="PokeBall">
+            <a href="#inicio">Ir al inicio
+            <img src="img/PokeBall.png" alt="PokeBall"></a>
+            <p> <i class="bi bi-code"></i> © Claumiranda - 2024 <i class="bi bi-code-slash"></i> </p>
+            <p>✏️ PokéAPI: https://pokeapi.co/</p>
+        </div>
+    </footer>
+    <script src="./js/main.js"></script>
+</body>
+</html>
